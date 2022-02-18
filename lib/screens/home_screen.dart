@@ -10,6 +10,7 @@ class HomeScreen extends StatelessWidget {
   HomeScreen({Key? key}) : super(key: key);
 
   final ValueNotifier<int> pageIndex = ValueNotifier(0);
+  final ValueNotifier<String> title = ValueNotifier('Messages');
 
   final pages = const [
     MessagesPage(),
@@ -18,18 +19,42 @@ class HomeScreen extends StatelessWidget {
     ContactsPage(),
   ];
 
+  final pageTitle = const [
+    'Messages',
+    'Notifications',
+    'Calls',
+    'Contacts',
+  ];
+
+  void _onNavigationItemSelcted(index) {
+    title.value = pageTitle[index];
+    pageIndex.value = index;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        title: ValueListenableBuilder(
+          valueListenable: title,
+          builder: (BuildContext context, String value, _) {
+            return Text(
+              value,
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+            );
+          },
+        ),
+      ),
       body: ValueListenableBuilder(
-          valueListenable: pageIndex,
-          builder: (BuildContext context, int value, _) {
-            return pages[value];
-          }),
-      bottomNavigationBar: _BottonNavigationBar(
-        onItemSelected: (index) {
-          pageIndex.value = index;
+        valueListenable: pageIndex,
+        builder: (BuildContext context, int value, _) {
+          return pages[value];
         },
+      ),
+      bottomNavigationBar: _BottonNavigationBar(
+        onItemSelected: _onNavigationItemSelcted,
       ),
     );
   }
