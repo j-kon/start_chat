@@ -5,6 +5,7 @@ import 'package:start_chat/pages/contact_page.dart';
 import 'package:start_chat/pages/messages_page.dart';
 import 'package:start_chat/pages/notifications_page.dart';
 import 'package:start_chat/theme.dart';
+import 'package:start_chat/widgets/glowing_action_button.dart';
 import 'package:start_chat/widgets/widgets.dart';
 
 import '../helper.dart';
@@ -112,7 +113,7 @@ class _BottonNavigationBarState extends State<_BottonNavigationBar> {
       margin: const EdgeInsets.all(0),
       child: SafeArea(
         top: false,
-        bottom: false,
+        bottom: true,
         child: Padding(
           padding: const EdgeInsets.only(top: 16.0, left: 8, right: 8),
           child: Row(
@@ -131,6 +132,13 @@ class _BottonNavigationBarState extends State<_BottonNavigationBar> {
                 icon: CupertinoIcons.bell_solid,
                 isSelected: (selectedIndex == 1),
                 onTap: handleItemSelected,
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                child: GlowingActionButton(
+                    color: AppColors.secondary,
+                    icon: CupertinoIcons.add,
+                    onPressed: () {}),
               ),
               _NavigationBarItem(
                 index: 2,
@@ -177,7 +185,7 @@ class _NavigationBarItem extends StatelessWidget {
         onTap(index);
       }),
       child: SizedBox(
-        height: 60,
+        width: 70,
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
