@@ -5,6 +5,9 @@ import 'package:start_chat/pages/contact_page.dart';
 import 'package:start_chat/pages/messages_page.dart';
 import 'package:start_chat/pages/notifications_page.dart';
 import 'package:start_chat/theme.dart';
+import 'package:start_chat/widgets/widgets.dart';
+
+import '../helper.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({Key? key}) : super(key: key);
@@ -42,10 +45,19 @@ class HomeScreen extends StatelessWidget {
           builder: (BuildContext context, String value, _) {
             return Text(
               value,
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+              style: const TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 20,
+              ),
             );
           },
         ),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 24.0),
+            child: Avatar.small(url: Helpers.randomPictureUrl()),
+          )
+        ],
       ),
       body: ValueListenableBuilder(
         valueListenable: pageIndex,
