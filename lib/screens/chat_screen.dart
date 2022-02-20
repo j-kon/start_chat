@@ -173,7 +173,6 @@ class _MessageOwnTile extends StatelessWidget {
 
   final String message;
   final String messageDate;
-
   static const _borderRadius = 26.0;
 
   @override
@@ -278,7 +277,7 @@ class _AppBarTitle extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                messageData.senderName,
+                'Dr ' + messageData.senderName,
                 overflow: TextOverflow.ellipsis,
                 style: const TextStyle(fontSize: 14),
               ),

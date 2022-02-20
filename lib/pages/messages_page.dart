@@ -15,7 +15,7 @@ class MessagesPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomScrollView(
       slivers: [
-        SliverToBoxAdapter(
+        const SliverToBoxAdapter(
           child: _Stories(),
         ),
         SliverList(delegate: SliverChildBuilderDelegate(_delegate))
@@ -72,7 +72,7 @@ class _MessageTile extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 8.0),
                       child: Text(
-                        messageData.senderName,
+                        'Dr ' + messageData.senderName,
                         style: const TextStyle(
                             overflow: TextOverflow.ellipsis,
                             letterSpacing: 0.2,
