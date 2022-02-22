@@ -35,14 +35,14 @@ const userDeven = DemoUser(
   id: 'deven',
   name: 'Deven Joshi',
   image:
-      'https://pbs.twimg.com/profile_images/1371411357459832832/vIy8TO9F_400x400.jpg',
+      'https://pbs.twimg.com/profile_images/1436372495381172225/4wDDMuD8_400x400.jpg',
 );
 
 const userSahil = DemoUser(
   id: 'sahil',
   name: 'Sahil Kumar',
   image:
-      'https://pbs.twimg.com/profile_images/1324766105127153664/q96TpY8I_400x400.jpg',
+      'https://pbs.twimg.com/profile_images/1436372495381172225/4wDDMuD8_400x400.jpg',
 );
 
 const userReuben = DemoUser(

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:start_chat/app.dart';
-import 'package:start_chat/screens/home_screen.dart';
+import 'package:start_chat/screens/select_user_screen.dart';
 import 'package:start_chat/theme.dart';
 import 'package:stream_chat_flutter_core/stream_chat_flutter_core.dart';
 
@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
           child: child!,
         );
       },
-      home: HomeScreen(),
+      home: const SelectUserScreen(),
     );
   }
 }

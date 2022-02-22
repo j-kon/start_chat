@@ -1,14 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:start_chat/app.dart';
 import 'package:start_chat/pages/calls_page.dart';
 import 'package:start_chat/pages/contact_page.dart';
 import 'package:start_chat/pages/messages_page.dart';
 import 'package:start_chat/pages/notifications_page.dart';
+import 'package:start_chat/screens/screens.dart';
 import 'package:start_chat/theme.dart';
 import 'package:start_chat/widgets/glowing_action_button.dart';
 import 'package:start_chat/widgets/widgets.dart';
-
-import '../helper.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({Key? key}) : super(key: key);
@@ -66,7 +66,12 @@ class HomeScreen extends StatelessWidget {
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 24.0),
-            child: Avatar.small(url: Helpers.randomPictureUrl()),
+            child: Avatar.small(
+              url: context.currentUserImage,
+              onTap: () {
+                Navigator.of(context).push(ProfileScreen.route);
+              },
+            ),
           )
         ],
       ),
