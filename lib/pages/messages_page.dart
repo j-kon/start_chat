@@ -143,21 +143,11 @@ class _MessageTile extends StatelessWidget {
                     const SizedBox(
                       height: 8,
                     ),
-                    Container(
-                      width: 18,
-                      height: 18,
-                      decoration: const BoxDecoration(
-                        color: AppColors.secondary,
-                        shape: BoxShape.circle,
+                    Center(
+                      child: UnreadIndicator(
+                        channel: channel,
                       ),
-                      child: const Center(
-                        child: Text(
-                          '1',
-                          style: TextStyle(
-                              fontSize: 10, color: AppColors.textLigth),
-                        ),
-                      ),
-                    ),
+                    )
                   ],
                 ),
               )
@@ -247,7 +237,7 @@ class _Stories extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Padding(
-              padding: EdgeInsets.only(left: 16.0, top: 8.0, bottom: 16),
+              padding: EdgeInsets.only(left: 16.0, top: 8.0, bottom: 8),
               child: Text(
                 'Stories',
                 style: TextStyle(
@@ -262,7 +252,7 @@ class _Stories extends StatelessWidget {
                   itemBuilder: (BuildContext context, int index) {
                     final faker = Faker();
                     return Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.all(5.0),
                       child: SizedBox(
                         width: 60,
                         child: _StoryCard(
