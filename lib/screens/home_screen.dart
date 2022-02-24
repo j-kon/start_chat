@@ -144,9 +144,20 @@ class _BottonNavigationBarState extends State<_BottonNavigationBar> {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 8.0),
                 child: GlowingActionButton(
-                    color: AppColors.secondary,
-                    icon: CupertinoIcons.add,
-                    onPressed: () {}),
+                  color: AppColors.secondary,
+                  icon: CupertinoIcons.add,
+                  onPressed: () {
+                    showDialog(
+                      context: context,
+                      builder: (BuildContext context) => const Dialog(
+                        child: AspectRatio(
+                          aspectRatio: 8 / 7,
+                          child: ContactsPage(),
+                        ),
+                      ),
+                    );
+                  },
+                ),
               ),
               _NavigationBarItem(
                 index: 2,

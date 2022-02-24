@@ -82,7 +82,7 @@ class _MessageTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: (() {
-        //Navigator.of(context).push(ChatScreen.route(messageData));
+        Navigator.of(context).push(ChatScreen.routeWithChannel(channel));
       }),
       child: Container(
         height: 100,
